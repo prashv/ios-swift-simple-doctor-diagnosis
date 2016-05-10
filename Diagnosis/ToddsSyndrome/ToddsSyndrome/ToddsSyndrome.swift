@@ -13,7 +13,7 @@ import Foundation
 public class ToddsSyndrome {
     
     public init() {
-        print("Class has been initialised")
+        print("ToddsSyndrome Framework has been initialised")
     }
     
     public func probability(age:Int, isMale: Int, hasMigraines: Int, usesDrugs: Int) -> Int {
