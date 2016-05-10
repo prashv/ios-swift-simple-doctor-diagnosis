@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ToddsSyndrome/ToddsSyndrome.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Diagnosis.xcodeproj">
    </FileRef>
    <FileRef

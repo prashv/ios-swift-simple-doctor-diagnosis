@@ -16,6 +16,7 @@
 		542B9EDE1CE192B000A65AD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 542B9EDC1CE192B000A65AD3 /* LaunchScreen.storyboard */; };
 		542B9EE91CE192B000A65AD3 /* DiagnosisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542B9EE81CE192B000A65AD3 /* DiagnosisTests.swift */; };
 		542B9EF41CE192B000A65AD3 /* DiagnosisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542B9EF31CE192B000A65AD3 /* DiagnosisUITests.swift */; };
+		547CC5E91CE254D900E4E26F /* ToddsSyndrome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547CC5E81CE254D900E4E26F /* ToddsSyndrome.framework */; };
 		54A0C65A1CE236EE000C7FD8 /* LogItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0C6581CE236EE000C7FD8 /* LogItem+CoreDataProperties.swift */; };
 		54A0C65B1CE236EE000C7FD8 /* LogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0C6591CE236EE000C7FD8 /* LogItem.swift */; };
 		54AAC3891CE2491600B34CC3 /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AAC3881CE2491600B34CC3 /* LogTableViewCell.swift */; };
@@ -41,6 +42,20 @@
 			remoteGlobalIDString = 542B9ECA1CE192B000A65AD3;
 			remoteInfo = Diagnosis;
 		};
+		547CC5AB1CE2524200E4E26F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 547CC5A61CE2524200E4E26F /* ToddsSyndrome.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 547CC5871CE2508D00E4E26F;
+			remoteInfo = ToddsSyndrome;
+		};
+		547CC5AD1CE2524200E4E26F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 547CC5A61CE2524200E4E26F /* ToddsSyndrome.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 547CC5911CE2508D00E4E26F;
+			remoteInfo = ToddsSyndromeTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +74,8 @@
 		542B9EEF1CE192B000A65AD3 /* DiagnosisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiagnosisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		542B9EF31CE192B000A65AD3 /* DiagnosisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisUITests.swift; sourceTree = "<group>"; };
 		542B9EF51CE192B000A65AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		547CC5A61CE2524200E4E26F /* ToddsSyndrome.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ToddsSyndrome.xcodeproj; path = Diagnosis/Frameworks/ToddsSyndrome/ToddsSyndrome.xcodeproj; sourceTree = "<group>"; };
+		547CC5E81CE254D900E4E26F /* ToddsSyndrome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToddsSyndrome.framework; path = "ToddsSyndrome/build/Debug-iphoneos/ToddsSyndrome.framework"; sourceTree = "<group>"; };
 		54A0C6581CE236EE000C7FD8 /* LogItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LogItem+CoreDataProperties.swift"; path = "Models/LogItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		54A0C6591CE236EE000C7FD8 /* LogItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogItem.swift; path = Models/LogItem.swift; sourceTree = "<group>"; };
 		54AAC3881CE2491600B34CC3 /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogTableViewCell.swift; path = Views/LogTableViewCell.swift; sourceTree = "<group>"; };
@@ -76,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				547CC5E91CE254D900E4E26F /* ToddsSyndrome.framework in Frameworks */,
 				5CBD934722CD08E4F1A98C39 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +179,15 @@
 			path = DiagnosisUITests;
 			sourceTree = "<group>";
 		};
+		547CC5A71CE2524200E4E26F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				547CC5AC1CE2524200E4E26F /* ToddsSyndrome.framework */,
+				547CC5AE1CE2524200E4E26F /* ToddsSyndromeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		54E86A021CE1AF980080AD3E /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +262,8 @@
 		893A48A252E9DF8BED4939FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				547CC5E81CE254D900E4E26F /* ToddsSyndrome.framework */,
+				547CC5A61CE2524200E4E26F /* ToddsSyndrome.xcodeproj */,
 				EBF02E6EAB5A2326510F6699 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -333,6 +362,12 @@
 			mainGroup = 542B9EC21CE192B000A65AD3;
 			productRefGroup = 542B9ECC1CE192B000A65AD3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 547CC5A71CE2524200E4E26F /* Products */;
+					ProjectRef = 547CC5A61CE2524200E4E26F /* ToddsSyndrome.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				542B9ECA1CE192B000A65AD3 /* Diagnosis */,
@@ -341,6 +376,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		547CC5AC1CE2524200E4E26F /* ToddsSyndrome.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ToddsSyndrome.framework;
+			remoteRef = 547CC5AB1CE2524200E4E26F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		547CC5AE1CE2524200E4E26F /* ToddsSyndromeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ToddsSyndromeTests.xctest;
+			remoteRef = 547CC5AD1CE2524200E4E26F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		542B9EC91CE192B000A65AD3 /* Resources */ = {
@@ -577,6 +629,11 @@
 			baseConfigurationReference = 6AEC04F530787A9B43436911 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Diagnosis",
+					"$(PROJECT_DIR)/ToddsSyndrome/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = Diagnosis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = doctor.diagnosis.Diagnosis;
@@ -589,6 +646,11 @@
 			baseConfigurationReference = BB74DC33643524F309DCE6A9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Diagnosis",
+					"$(PROJECT_DIR)/ToddsSyndrome/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = Diagnosis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = doctor.diagnosis.Diagnosis;

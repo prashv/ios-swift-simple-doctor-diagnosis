@@ -9,12 +9,13 @@
 import UIKit
 import CoreData
 import DLRadioButton
+import ToddsSyndrome
 
 class MasterViewController: UIViewController {
     
     // Retreive the managedObjectContext from AppDelegate
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-
+    let toddsSyndrome = ToddsSyndrome()
     
     @IBOutlet weak var error: UILabel!
     @IBOutlet weak var age: UITextField!
@@ -72,7 +73,7 @@ class MasterViewController: UIViewController {
             newItem.isMale = String(isMale)
             newItem.hasMigraines = String(hasMigraines)
             newItem.usesDrugs = String(usesDrugs)
-            newItem.result = String(50)
+            newItem.result = String(toddsSyndrome.probability(Int(age.text!)!, isMale: isMale, hasMigraines: hasMigraines, usesDrugs: usesDrugs))
             
             let title = "Result"
             let message = "Probability of T odd’s Syndrome : " + newItem.result! + "%"
