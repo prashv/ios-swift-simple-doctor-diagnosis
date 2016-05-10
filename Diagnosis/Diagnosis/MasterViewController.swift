@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import DLRadioButton
 import ToddsSyndrome
+import Alamofire
 
 class MasterViewController: UIViewController {
     
@@ -74,6 +75,24 @@ class MasterViewController: UIViewController {
             newItem.hasMigraines = String(hasMigraines)
             newItem.usesDrugs = String(usesDrugs)
             newItem.result = String(toddsSyndrome.probability(Int(age.text!)!, isMale: isMale, hasMigraines: hasMigraines, usesDrugs: usesDrugs))
+            
+            
+            let parameters: [String: AnyObject] = [
+                "name": name.text!,
+                "age": age.text!,
+                "result": newItem.result! + "%"
+            ]
+            
+            Alamofire.request(.POST, Constants().postDiagnosis(), parameters: parameters, encoding: .JSON)
+                .validate()
+                .responseJSON { response in
+                    switch response.result {
+                    case .Success:
+                        print("Log Post Validation Successful")
+                    case .Failure(let error):
+                        print(error)
+                    }
+                }
             
             let title = "Result"
             let message = "Probability of T odd’s Syndrome : " + newItem.result! + "%"
