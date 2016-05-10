@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import DLRadioButton
 
 class MasterViewController: UIViewController {
 
@@ -33,6 +34,17 @@ class MasterViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @objc @IBAction private func logSelectedButton(radioButton : DLRadioButton) {
+        if (radioButton.multipleSelectionEnabled) {
+            for button in radioButton.selectedButtons() {
+                print(String(format: "%@ is selected.\n", button.titleLabel!.text!));
+            }
+        } else {
+            print(String(format: "%@ is selected.\n", radioButton.selectedButton()!.titleLabel!.text!));
+        }
+    }
+
 
     
     // MARK: - Segues

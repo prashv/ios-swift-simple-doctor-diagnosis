@@ -24,18 +24,9 @@
                                     <constraint firstAttribute="width" constant="169" id="jxK-VU-D6o"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="d1a-VM-39o">
-                                <rect key="frame" x="290" y="560" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="QAs-fG-MQc"/>
-                                    <constraint firstAttribute="height" constant="20" id="hgM-6O-Jei"/>
-                                </constraints>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="d1a-VM-39o" secondAttribute="bottom" constant="20" id="15T-55-Pgc"/>
-                            <constraint firstItem="d1a-VM-39o" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1F8-W3-bqm"/>
                             <constraint firstItem="hIO-Mz-vth" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BCY-CV-Siz"/>
                             <constraint firstItem="hIO-Mz-vth" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Dq2-0w-CLL"/>
                         </constraints>
