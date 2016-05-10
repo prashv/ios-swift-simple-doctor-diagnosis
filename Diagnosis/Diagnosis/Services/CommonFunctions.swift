@@ -8,16 +8,28 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class CommonFunctions {
     
-    func delay(delay:Double, closure:()->()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), closure)
+    func deleteAllData(entity: String)
+    {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: entity)
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                managedContext.deleteObject(managedObjectData)
+            }
+        } catch let error as NSError {
+            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
+        }
     }
     
 }

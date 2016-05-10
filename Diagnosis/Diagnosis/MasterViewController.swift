@@ -80,7 +80,7 @@ class MasterViewController: UIViewController {
             let parameters: [String: AnyObject] = [
                 "name": name.text!,
                 "age": age.text!,
-                "result": newItem.result! + "%"
+                "result": newItem.result!
             ]
             
             Alamofire.request(.POST, Constants().postDiagnosis(), parameters: parameters, encoding: .JSON)

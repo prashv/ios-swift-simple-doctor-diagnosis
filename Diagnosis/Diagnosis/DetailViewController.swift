@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreData
+import Alamofire
 
 class DetailViewController: UITableViewController {
+    
+    @IBOutlet var logTableView: UITableView!
     
     // Retreive the managedObjectContext from AppDelegate
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
@@ -35,7 +38,15 @@ class DetailViewController: UITableViewController {
         self.configureView()
         let addButton = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: #selector(DetailViewController.refreshFromServer(_:)))
         self.navigationItem.rightBarButtonItem = addButton
-        
+        fetchFromCoreData()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func fetchFromCoreData(){
         // Create a new fetch request using the LogItem entity
         let fetchRequest = NSFetchRequest()
         // Edit the entity name as appropriate.
@@ -48,15 +59,51 @@ class DetailViewController: UITableViewController {
         } catch {
             print(error)
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
     }
 
     func refreshFromServer(sender: AnyObject) {
-        
+        Alamofire.request(.GET, Constants().refreshDiagnosis())
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .Success(let JSON):
+                    //Delete all existing core data
+                    CommonFunctions().deleteAllData("LogItem")
+                    
+                    //Add all from server response to core data
+                    let res = JSON as! [NSDictionary]
+                    for r: NSDictionary in res{
+                        self.addItem(r.objectForKey("name")! as! String, age: r.objectForKey("age")! as! String, result: r.objectForKey("result")! as! String)
+                    }
+                    
+                    //Fetch all & reload
+                    self.fetchFromCoreData()
+                    self.logTableView.reloadData()
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.tableView.reloadData()
+                    })
+                    
+                case .Failure(let error):
+                    print(error)
+                    // Create an Alert, and set it's message to whatever the itemText is
+                    let alertController = UIAlertController(title: "Server Error", message: "Kindly check internet connection", preferredStyle: .Alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    // Display the alert
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+        }
+    }
+    
+    func addItem(name: String, age: String, result: String){
+        let newItem = NSEntityDescription.insertNewObjectForEntityForName("LogItem", inManagedObjectContext: self.managedObjectContext) as! LogItem
+        newItem.name = name
+        newItem.age = age
+        newItem.result = result
+
     }
 
     // MARK: - Table view data source

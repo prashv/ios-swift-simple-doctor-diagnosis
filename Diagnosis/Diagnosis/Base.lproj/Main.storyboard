@@ -410,7 +410,7 @@
                                                 <constraint firstAttribute="width" constant="170" id="wLW-eq-2Ku"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0er-sZ-Pu3">
@@ -459,6 +459,10 @@
                     <navigationItem key="navigationItem" title="History" id="E0C-t5-QOr">
                         <barButtonItem key="backBarButtonItem" title="Back" id="W8E-wG-dcV"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="logTableView" destination="Tlo-qw-XjI" id="uZe-nQ-1E7"/>
+                        <outlet property="tableView" destination="Tlo-qw-XjI" id="OhQ-eU-9Fj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BqW-kQ-Kqi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
