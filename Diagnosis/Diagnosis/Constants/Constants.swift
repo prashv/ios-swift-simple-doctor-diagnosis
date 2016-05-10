@@ -9,12 +9,17 @@
 import Foundation
 
 class Constants {
-    let BASE_URL = "http://www.madmenbarbershop.com"
-    let API_INITIALIZE_API = ""
     
-    let COLOR_PRIMARY = "#FF8E01"
+    let BASE_URL = "http://"
+    let API_REFRESH_DIAGNOSIS = ""
+    let API_POST_DIAGNOSIS = ""
     
-    func initAPI() ->String {
-        return BASE_URL + API_INITIALIZE_API
+    func refreshDiagnosis() ->String {
+        return BASE_URL + API_REFRESH_DIAGNOSIS
     }
+
+    func postDiagnosis() ->String {
+        return BASE_URL + API_POST_DIAGNOSIS
+    }
+
 }

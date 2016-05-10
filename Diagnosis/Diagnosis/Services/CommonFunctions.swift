@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CommonFunctions : UIColor{
+class CommonFunctions {
     
     func delay(delay:Double, closure:()->()) {
         dispatch_after(

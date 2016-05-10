@@ -1,0 +1,16 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'Diagnosis' do
+
+end
+
+target 'DiagnosisTests' do
+
+end
+
+target 'DiagnosisUITests' do
+
+end
+
+pod 'DLRadioButton', '~> 1.4'
