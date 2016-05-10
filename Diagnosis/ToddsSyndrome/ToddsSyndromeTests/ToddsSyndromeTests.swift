@@ -21,9 +21,13 @@ class ToddsSyndromeTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testProbability() {
+        let toddsSyndrome = ToddsSyndrome()
+        XCTAssertEqual(toddsSyndrome.probability(age: 25, isMale: 0, hasMigraines: 0, usesDrugs: 0), 0, "Probability 0 %")
+        XCTAssertEqual(toddsSyndrome.probability(age: 15, isMale: 0, hasMigraines: 0, usesDrugs: 0), 0, "Probability 25 %")
+        XCTAssertEqual(toddsSyndrome.probability(age: 15, isMale: 1, hasMigraines: 0, usesDrugs: 0), 0, "Probability 50 %")
+        XCTAssertEqual(toddsSyndrome.probability(age: 15, isMale: 1, hasMigraines: 1, usesDrugs: 0), 0, "Probability 75 %")
+        XCTAssertEqual(toddsSyndrome.probability(age: 15, isMale: 1, hasMigraines: 1, usesDrugs: 1), 0, "Probability 100 %")
     }
     
     func testPerformanceExample() {

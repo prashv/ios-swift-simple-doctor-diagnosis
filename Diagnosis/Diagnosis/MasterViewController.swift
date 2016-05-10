@@ -86,7 +86,9 @@ class MasterViewController: UIViewController {
             
             // Display the alert
             self.presentViewController(alertController, animated: true, completion: nil)
-
+            
+            name.text = ""
+            age.text = ""
         }
     }
     
