@@ -18,6 +18,8 @@
 		542B9EF41CE192B000A65AD3 /* DiagnosisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542B9EF31CE192B000A65AD3 /* DiagnosisUITests.swift */; };
 		54E86A0C1CE1B0120080AD3E /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E86A0B1CE1B0120080AD3E /* CommonFunctions.swift */; };
 		54E86A0E1CE1B08C0080AD3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E86A0D1CE1B08C0080AD3E /* Constants.swift */; };
+		54E86A101CE1B0FD0080AD3E /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E86A0F1CE1B0FD0080AD3E /* SegueFromRight.swift */; };
+		54E86A121CE1B10F0080AD3E /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E86A111CE1B10F0080AD3E /* SegueFromLeft.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		542B9EF51CE192B000A65AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54E86A0B1CE1B0120080AD3E /* CommonFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonFunctions.swift; path = Services/CommonFunctions.swift; sourceTree = "<group>"; };
 		54E86A0D1CE1B08C0080AD3E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Constants/Constants.swift; sourceTree = "<group>"; };
+		54E86A0F1CE1B0FD0080AD3E /* SegueFromRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueFromRight.swift; path = Segues/SegueFromRight.swift; sourceTree = "<group>"; };
+		54E86A111CE1B10F0080AD3E /* SegueFromLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueFromLeft.swift; path = Segues/SegueFromLeft.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,8 @@
 		54E86A091CE1AFE40080AD3E /* Segues */ = {
 			isa = PBXGroup;
 			children = (
+				54E86A0F1CE1B0FD0080AD3E /* SegueFromRight.swift */,
+				54E86A111CE1B10F0080AD3E /* SegueFromLeft.swift */,
 			);
 			name = Segues;
 			sourceTree = "<group>";
@@ -336,7 +342,9 @@
 				542B9ED21CE192B000A65AD3 /* Diagnosis.xcdatamodeld in Sources */,
 				54E86A0C1CE1B0120080AD3E /* CommonFunctions.swift in Sources */,
 				542B9ED41CE192B000A65AD3 /* MasterViewController.swift in Sources */,
+				54E86A101CE1B0FD0080AD3E /* SegueFromRight.swift in Sources */,
 				542B9ED61CE192B000A65AD3 /* DetailViewController.swift in Sources */,
+				54E86A121CE1B10F0080AD3E /* SegueFromLeft.swift in Sources */,
 				54E86A0E1CE1B08C0080AD3E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
