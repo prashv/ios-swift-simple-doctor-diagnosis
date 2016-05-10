@@ -45,15 +45,6 @@ class DetailViewController: UITableViewController {
         // Execute the fetch request, and cast the results to an array of LogItem objects
         do {
             fetchResults = try self.managedObjectContext.executeFetchRequest(fetchRequest) as! [LogItem]
-            
-            // Create an Alert, and set it's message to whatever the itemText is
-            let alertController = UIAlertController(title: fetchResults[0].name, message: fetchResults[0].age, preferredStyle: .Alert)
-         
-            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alertController.addAction(defaultAction)
-        
-            // Display the alert
-            self.presentViewController(alertController, animated: true, completion: nil)
         } catch {
             print(error)
         }
@@ -64,11 +55,24 @@ class DetailViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Segues
-    
     func refreshFromServer(sender: AnyObject) {
         
     }
 
+    // MARK: - Table view data source
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fetchResults.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("logCell", forIndexPath: indexPath) as! LogTableViewCell
+        
+        cell.name?.text = fetchResults[indexPath.row].name!
+        cell.age?.text = fetchResults[indexPath.row].age! + "yrs"
+        cell.result?.text = fetchResults[indexPath.row].result! + "%"
+        
+        return cell
+    }
 }
 

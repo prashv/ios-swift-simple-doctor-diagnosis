@@ -18,6 +18,7 @@
 		542B9EF41CE192B000A65AD3 /* DiagnosisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542B9EF31CE192B000A65AD3 /* DiagnosisUITests.swift */; };
 		54A0C65A1CE236EE000C7FD8 /* LogItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0C6581CE236EE000C7FD8 /* LogItem+CoreDataProperties.swift */; };
 		54A0C65B1CE236EE000C7FD8 /* LogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A0C6591CE236EE000C7FD8 /* LogItem.swift */; };
+		54AAC3891CE2491600B34CC3 /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AAC3881CE2491600B34CC3 /* LogTableViewCell.swift */; };
 		54E86A0C1CE1B0120080AD3E /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E86A0B1CE1B0120080AD3E /* CommonFunctions.swift */; };
 		54E86A0E1CE1B08C0080AD3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E86A0D1CE1B08C0080AD3E /* Constants.swift */; };
 		54E86A101CE1B0FD0080AD3E /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E86A0F1CE1B0FD0080AD3E /* SegueFromRight.swift */; };
@@ -60,6 +61,7 @@
 		542B9EF51CE192B000A65AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54A0C6581CE236EE000C7FD8 /* LogItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LogItem+CoreDataProperties.swift"; path = "Models/LogItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		54A0C6591CE236EE000C7FD8 /* LogItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogItem.swift; path = Models/LogItem.swift; sourceTree = "<group>"; };
+		54AAC3881CE2491600B34CC3 /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogTableViewCell.swift; path = Views/LogTableViewCell.swift; sourceTree = "<group>"; };
 		54E86A0B1CE1B0120080AD3E /* CommonFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonFunctions.swift; path = Services/CommonFunctions.swift; sourceTree = "<group>"; };
 		54E86A0D1CE1B08C0080AD3E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Constants/Constants.swift; sourceTree = "<group>"; };
 		54E86A0F1CE1B0FD0080AD3E /* SegueFromRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueFromRight.swift; path = Segues/SegueFromRight.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		54E86A081CE1AFD70080AD3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				54AAC3881CE2491600B34CC3 /* LogTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				542B9ECF1CE192B000A65AD3 /* AppDelegate.swift in Sources */,
+				54AAC3891CE2491600B34CC3 /* LogTableViewCell.swift in Sources */,
 				54A0C65A1CE236EE000C7FD8 /* LogItem+CoreDataProperties.swift in Sources */,
 				542B9ED21CE192B000A65AD3 /* Diagnosis.xcdatamodeld in Sources */,
 				54E86A0C1CE1B0120080AD3E /* CommonFunctions.swift in Sources */,
