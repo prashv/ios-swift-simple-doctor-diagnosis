@@ -12,12 +12,21 @@ import DLRadioButton
 
 class MasterViewController: UIViewController {
 
+    @IBOutlet weak var error: UILabel!
+    @IBOutlet weak var age: UITextField!
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var submitButton: UIButton!
     var detailViewController: DetailViewController? = nil
+    
+    var isMale = -1
+    var hasMigraines = -1
+    var usesDrugs = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        error.hidden = true
         let addButton = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(MasterViewController.goToHistory(_:)))
         self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
@@ -35,17 +44,49 @@ class MasterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @objc @IBAction private func logSelectedButton(radioButton : DLRadioButton) {
-        if (radioButton.multipleSelectionEnabled) {
-            for button in radioButton.selectedButtons() {
-                print(String(format: "%@ is selected.\n", button.titleLabel!.text!));
-            }
+    @IBAction func submit(sender: AnyObject) {
+        error.hidden = true
+        if (name.text!.isEmpty){
+            error.text = "Kindly enter your name"
+            error.hidden = false
+        } else if (age.text!.isEmpty){
+            error.text = "Kindly enter your age"
+            error.hidden = false
+        } else if(isMale == -1){
+            error.text = "Kindly select sex"
+            error.hidden = false
+        } else if (hasMigraines == -1) {
+            error.text = "Kindly select migraines history"
+            error.hidden = false
+        } else if (usesDrugs == -1) {
+            error.text = "Kindly select drugs history"
+            error.hidden = false
         } else {
-            print(String(format: "%@ is selected.\n", radioButton.selectedButton()!.titleLabel!.text!));
+            
         }
     }
+    
+    
+    // MARK: - RadioButton Actions
 
-
+    @IBAction func chooseDrugsNo(sender: AnyObject) {
+        usesDrugs = 0
+    }
+    @IBAction func chooseDrugsYes(sender: AnyObject) {
+        usesDrugs = 1
+    }
+    @IBAction func chooseMigrainesNo(sender: AnyObject) {
+        hasMigraines = 0
+    }
+    @IBAction func chooseMigrainesYes(sender: AnyObject) {
+        hasMigraines = 1
+    }
+    @IBAction func chooseFemale(sender: AnyObject) {
+        isMale = 0
+    }
+    @IBAction func chooseMale(sender: AnyObject) {
+        isMale = 1
+    }
     
     // MARK: - Segues
     
