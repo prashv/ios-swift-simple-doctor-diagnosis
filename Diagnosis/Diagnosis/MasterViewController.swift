@@ -11,7 +11,11 @@ import CoreData
 import DLRadioButton
 
 class MasterViewController: UIViewController {
+    
+    // Retreive the managedObjectContext from AppDelegate
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 
+    
     @IBOutlet weak var error: UILabel!
     @IBOutlet weak var age: UITextField!
     @IBOutlet weak var name: UITextField!
@@ -62,7 +66,26 @@ class MasterViewController: UIViewController {
             error.text = "Kindly select drugs history"
             error.hidden = false
         } else {
+            let newItem = NSEntityDescription.insertNewObjectForEntityForName("LogItem", inManagedObjectContext: self.managedObjectContext) as! LogItem
+            newItem.name = name.text
+            newItem.age = age.text
+            newItem.isMale = String(isMale)
+            newItem.hasMigraines = String(hasMigraines)
+            newItem.usesDrugs = String(usesDrugs)
+            newItem.result = String(50)
             
+            let title = "Result"
+            let message = "Probability of T odd’s Syndrome : " + newItem.result! + "%"
+            
+            // Create an Alert, and set it's message to whatever the itemText is
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            // Display the alert
+            self.presentViewController(alertController, animated: true, completion: nil)
+
         }
     }
     
